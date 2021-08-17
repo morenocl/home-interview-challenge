@@ -22,6 +22,7 @@ const ConfigurationControllerInstance = new ConfigurationController(
 
 app.prepare().then(() => {
   const server = express();
+  server.use(express.json());
 
   //get configuration by path
   server.get("/configuration/:path", (req, res) =>

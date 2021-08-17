@@ -6,20 +6,21 @@
         "type": "text",
         "name": "username",
         "label": "Username",
-        "regex": "[a-zA-Z]{1,32}",
+        "regex": "^w{1,32}$",
         "required": true
       },
       {
         "type": "password",
         "name": "password",
         "label": "Password",
-        "regex": "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$",
+        "regex": "^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$",
         "required": true
       },
       {
         "type": "checkbox",
         "name": "remember",
-        "label": "Remember me"
+        "label": "Remember me",
+        "required": true
       },
       {
         "type": "button",
@@ -53,19 +54,19 @@
         "type": "text",
         "name": "username",
         "label": "Username",
-        "regex": "[a-zA-Z]{1,32}"
+        "regex": "^w{1,32}$"
       },
       {
         "type": "password",
         "name": "password",
         "label": "Password",
-        "regex": "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+        "regex": "^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
       },
       {
-        "type": "password",
+        "type": "confirm_password",
         "name": "password",
         "label": "Confirm your password",
-        "regex": "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$",
+        "regex": "^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$",
         "conditions": {
           "validations": [{ "comparision": "same", "input": "password" }]
         }
