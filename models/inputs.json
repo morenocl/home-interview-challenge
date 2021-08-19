@@ -19,8 +19,7 @@
       {
         "type": "checkbox",
         "name": "remember",
-        "label": "Remember me",
-        "required": true
+        "label": "Remember me"
       },
       {
         "type": "button",
@@ -29,8 +28,9 @@
       },
       {
         "type": "link",
-        "target": "https://digiventures.la/",
-        "text": "¿Any problem? Contact us"
+        "to": "https://digiventures.la/",
+        "target": "_newblank",
+        "label": "¿Any problem? Contact us"
       }
     ]
   },
@@ -48,7 +48,7 @@
         "type": "email",
         "name": "email",
         "label": "Email",
-        "regex": "^[w-.]+@([w-]+.)+[w-]{2,4}$"
+        "regex": "^[\\w-]+@([\\w-]+.)+[\\w-]{2,4}$"
       },
       {
         "type": "text",
@@ -63,8 +63,8 @@
         "regex": "^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
       },
       {
-        "type": "confirm_password",
-        "name": "password",
+        "type": "password",
+        "name": "confirm_password",
         "label": "Confirm your password",
         "regex": "^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$",
         "conditions": {
@@ -93,13 +93,11 @@
             }
           ],
           "render": [
-            [
               {
                 "comparision": "includes",
                 "input": "country",
                 "values": ["other"]
               }
-            ]
           ]
         }
       },

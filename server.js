@@ -11,6 +11,8 @@ const ConfigurationModel = require("./models/inputs.json");
 const ConfigurationService = require("./services/ConfigurationService");
 const ConfigurationController = require("./controllers/ConfigurationController");
 
+const handlerMongo = require("./mongoose/controllers");
+
 //Configuration instances
 const ConfigurationServiceInstance = new ConfigurationService(
   ConfigurationModel
@@ -25,12 +27,14 @@ app.prepare().then(() => {
   server.use(express.json());
 
   //get configuration by path
-  server.get("/configuration/:path", (req, res) =>
+  server.get("/configuration/:path", (req, res) => {
     ConfigurationControllerInstance.get(req, res)
-  );
+  });
 
   server.post("/:path", (req, res) => {
     console.log(req.body);
+
+    handlerMongo(req.path, req.body);
 
     return res.sendStatus(200);
   });
